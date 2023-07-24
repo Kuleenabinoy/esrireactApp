@@ -8,6 +8,7 @@ const MapComponent = () => {
                 const [Map, MapView, GeoJSONLayer, PopupTemplate] = await loadModules(
                     ["esri/Map", "esri/views/MapView", "esri/layers/GeoJSONLayer", "esri/PopupTemplate"],
                     {
+                        css: true,
                         apiKey: "AAPKebc43486544249fdb03d89fb017d910fK4qBTtUMJaezY4ya_RUQsyaQUeVrrlUee3PqBbmrtKuvRIEv3qTEDV43k9O9YG_M",
                     }
                 );
@@ -38,7 +39,8 @@ const MapComponent = () => {
                 });
                 const map = new Map({
                     basemap: "streets-vector",
-                    // You can choose from "streets", "satellite", "topo", etc.
+                    // basemap: "topo-vector",
+                    // basemap: "satellite",
                 });
 
                 // Create the map view
