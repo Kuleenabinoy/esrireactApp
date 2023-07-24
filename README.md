@@ -15,4 +15,4 @@ npm run start
 
 ## Screenshot
 
-![Map Screen Shot](./ScreenShots/Screenshot2.png "ScreenShot")
+![Map Screen Shot](.\Screenshots\Screenshot2.png "ScreenShot")
