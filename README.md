@@ -15,4 +15,4 @@ npm run start
 
 ## Screenshot
 
-![Map Screen Shot](.\Screenshots\Screenshot2.png "ScreenShot")
+![Map Screen Shot](https://github.com/Kuleenabinoy/esrireactApp/tree/main/Screenshots/Screenshot2.png " ScreenShot")
