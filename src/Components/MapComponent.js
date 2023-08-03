@@ -1,18 +1,23 @@
 import React, { useEffect } from "react";
 import { loadModules } from "esri-loader";
+import esriConfig from "@arcgis/core/config"; // Import esriConfig
 const MapComponent = () => {
+    
     useEffect(() => {
         const createMap = async () => {
+            esriConfig.apiKey = process.env.REACT_APP_ARCGIS_API_KEY;
+          
             try {
                 // Load the required Esri modules using esri-loader
                 const [Map, MapView, GeoJSONLayer, PopupTemplate] = await loadModules(
                     ["esri/Map", "esri/views/MapView", "esri/layers/GeoJSONLayer", "esri/PopupTemplate"],
-                    {
-                        css: true,
-                        apiKey: "AAPKebc43486544249fdb03d89fb017d910fK4qBTtUMJaezY4ya_RUQsyaQUeVrrlUee3PqBbmrtKuvRIEv3qTEDV43k9O9YG_M",
-                    }
+                   {
+                       css: true,
+                       apiKey: process.env.REACT_APP_ARCGIS_API_KEY, 
+                       //apiKey: "AAPKebc43486544249fdb03d89fb017d910fK4qBTtUMJaezY4ya_RUQsyaQUeVrrlUee3PqBbmrtKuvRIEv3qTEDV43k9O9YG_M",
+                   }
                 );
-
+               // console.log(apiKey);
                 // Fetch GeoJSON data
                 const response = await fetch(
                     "https://portal.spatial.nsw.gov.au/geoserver/liveTransport/buses/FeatureServer/0/query?f=geojson"
